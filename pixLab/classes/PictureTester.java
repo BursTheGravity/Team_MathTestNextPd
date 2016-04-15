@@ -44,6 +44,27 @@ public class PictureTester {
         caterpillar.explore();
     }
 
+    public static void testMirrorVerticalRightToLeft() {
+        Picture caterpillar = new Picture("caterpillar.jpg");
+        caterpillar.explore();
+        caterpillar.mirrorVerticalRightToLeft();
+        caterpillar.explore();
+    }
+
+    public static void testMirrorHorizontal() {
+        Picture caterpillar = new Picture("caterpillar.jpg");
+        caterpillar.explore();
+        caterpillar.mirrorHorizontal();
+        caterpillar.explore();
+    }
+
+    public static void testMirrorHorizontalBotToTop() {
+        Picture caterpillar = new Picture("caterpillar.jpg");
+        caterpillar.explore();
+        caterpillar.mirrorHorizontalBotToTop();
+        caterpillar.explore();
+    }
+
     /** Method to test mirrorTemple */
     public static void testMirrorTemple() {
         Picture temple = new Picture("temple.jpg");
@@ -72,12 +93,15 @@ public class PictureTester {
         // uncomment a call here to run a test
         // and comment out the ones you don't want
         // to run
-        testZeroBlue();
-        testKeepOnlyBlue();
+        // testZeroBlue();
+        // testKeepOnlyBlue();
         //testKeepOnlyRed();
         //testKeepOnlyGreen();
-        testNegate();
-        testGrayscale();
+        // testNegate();
+        // testGrayscale();
+        // testMirrorVerticalRightToLeft();
+        // testMirrorHorizontal();
+        testMirrorHorizontalBotToTop();
         //testFixUnderwater();
         //testMirrorVertical();
         //testMirrorTemple();
@@ -86,7 +110,7 @@ public class PictureTester {
         //testMirrorDiagonal();
         //testCollage();
         //testCopy();
-        testEdgeDetection();
+        // testEdgeDetection();
         //testEdgeDetection2();
         //testChromakey();
         //testEncodeAndDecode();
