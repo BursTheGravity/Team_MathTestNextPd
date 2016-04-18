@@ -79,6 +79,20 @@ public class PictureTester {
         seagull.explore();
     }
 
+    public static void testCopy2() {
+        Picture flag = new Picture("flag.jpg");
+        flag.explore();
+        flag.copy2(flag, 1, 2, 3, 4);
+        flag.explore();
+    }
+
+    public static void testMyCollage() {
+        Picture flag = new Picture("flag.jpg");
+        flag.explore();
+        flag.myCollage();
+        flag.explore();
+    }
+
     /** Method to test mirrorTemple */
     public static void testMirrorTemple() {
         Picture temple = new Picture("temple.jpg");
@@ -116,7 +130,7 @@ public class PictureTester {
         // testMirrorVerticalRightToLeft();
         // testMirrorHorizontal();
         // testMirrorHorizontalBotToTop();
-        testMirrorGull();
+        // testMirrorGull();
         //testFixUnderwater();
         //testMirrorVertical();
         //testMirrorTemple();
@@ -125,6 +139,8 @@ public class PictureTester {
         //testMirrorDiagonal();
         //testCollage();
         //testCopy();
+        // testCopy2();
+        // testMyCollage();
         // testEdgeDetection();
         //testEdgeDetection2();
         //testChromakey();

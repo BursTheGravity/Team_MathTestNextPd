@@ -288,6 +288,33 @@ public class Picture extends SimplePicture {
         this.write("collage.jpg");
     }
 
+    public void copy2(Picture fromPic, int startRow, int endRow, int startCol, int endCol) {
+        Pixel fromPixel;
+        Pixel toPixel;
+        Pixel[][] toPixels = this.getPixels2D();
+        Pixel[][] fromPixels = fromPic.getPixels2D();
+        for (int fromRow = 0, toRow = startRow;
+                fromRow < fromPixels.length &&
+                toRow < endRow;
+                fromRow++, toRow++)
+        {
+            for (int fromCol = 0, toCol = startCol;
+                    fromCol < fromPixels[0].length &&
+                    toCol < endCol;
+                    fromCol++, toCol++)
+            {
+                fromPixel = fromPixels[fromRow][fromCol];
+                toPixel = toPixels[toRow][toCol];
+                toPixel.setColor(fromPixel.getColor());
+            }
+        }
+    }
+
+    public void myCollage() {
+        Picture flag = new Picture("flag.jpg");
+        this.copy2(flag,10,30, 50, 100);
+        this.write("flags.jpg");
+    }
 
     /** Method to show large changes in color
      * @param edgeDist the distance for finding edges
