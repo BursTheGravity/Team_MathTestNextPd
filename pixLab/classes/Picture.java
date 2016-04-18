@@ -234,6 +234,44 @@ public class Picture extends SimplePicture {
         }
     }
 
+    public void mirrorArms() {
+        Pixel topPixel = null;
+        Pixel bottomPixel = null;
+        Pixel[][] pixels = this.getPixels2D();
+
+        for (int row = 160; row < 195; row++) {
+            for (int col = 100; col < 170; col++) {
+                topPixel = pixels[row][col];
+                bottomPixel = pixels[390 - row][col];
+                bottomPixel.setColor(topPixel.getColor());
+            }
+        }
+
+        for (int row = 170; row < 200; row++) {
+            for (int col = 240; col < 295; col++) {
+                topPixel = pixels[row][col];
+                bottomPixel = pixels[400 - row][col];
+                bottomPixel.setColor(topPixel.getColor());
+            }
+        }
+    }
+
+    public void mirrorGull() {
+        int mirrorPoint = 345;
+        Pixel rightPixel = null;
+        Pixel leftPixel = null;
+        Pixel[][] pixels = this.getPixels2D();
+
+        for (int row = 235; row < 323; row++) {
+            for (int col = 238; col < mirrorPoint; col++) {
+                rightPixel = pixels[row][col];
+                leftPixel = pixels[row][mirrorPoint - col + mirrorPoint/3];
+                leftPixel.setColor(rightPixel.getColor());
+            }
+        }
+    }
+
+
     /** Method to create a collage of several pictures */
     public void createCollage() {
         Picture flower1 = new Picture("flower1.jpg");
